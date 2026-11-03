@@ -1,0 +1,400 @@
+CSV files not found - generating seeded synthetic data.
+Loaded 120 days x 3 SKUs  (2025-01-01 -> 2025-04-30)
+       unit_cost  holding_cost_per_day  stockout_cost  lead_time_days  min_order_qty  service_level
+sku                                                                                                
+SKU_A       12.0                  0.05            9.0               5             60           0.95
+SKU_B       35.0                  0.14           28.0               7             40           0.97
+SKU_C        8.0                  0.03            4.0               3             20           0.90
+       opening_stock
+sku                 
+SKU_A            300
+SKU_B            150
+SKU_C             40
+sku         SKU_A  SKU_B  SKU_C
+date                           
+2025-01-01     41     20      5
+2025-01-02     34     17     11
+2025-01-03     37     21     11
+2025-01-04     66     17      3
+2025-01-05     34     12      4
+2025-01-15 SKU_A | oh=  300 (+  0 in) | dem= 37 lost=  0 | WAIT     0 | fc=40.9/d sigma=9.7 SS=39.1; projected inv after 6d = 300+0-245.5 = 54.5 >= SS -> enough cover, wait (saves holding cost)
+2025-01-15 SKU_B | oh=  150 (+  0 in) | dem= 20 lost=  0 | ORDER  119 | fc=16.1/d sigma=5.0 SS=26.4; projected inv after 8d = 150+0-129.1 = 20.9 < SS -> ORDER 119 (target 268, position 150); arrives in 7d
+2025-01-15 SKU_C | oh=   40 (+  0 in) | dem=  9 lost=  0 | WAIT     0 | fc=6.3/d sigma=3.7 SS=9.5; projected inv after 4d = 40+0-25.4 = 14.6 >= SS -> enough cover, wait (saves holding cost)
+2025-01-16 SKU_A | oh=  263 (+  0 in) | dem= 30 lost=  0 | ORDER  302 | fc=40.5/d sigma=9.3 SS=37.4; projected inv after 6d = 263+0-243.1 = 19.9 < SS -> ORDER 302 (target 564, position 263); arrives in 5d
+2025-01-16 SKU_B | oh=  130 (+  0 in) | dem= 17 lost=  0 | WAIT     0 | fc=16.5/d sigma=4.9 SS=25.9; projected inv after 8d = 130+119-132.2 = 116.8 >= SS -> enough cover, wait (saves holding cost)
+2025-01-16 SKU_C | oh=   31 (+  0 in) | dem=  6 lost=  0 | ORDER   51 | fc=6.6/d sigma=3.6 SS=9.3; projected inv after 4d = 31+0-26.4 = 4.6 < SS -> ORDER 51 (target 82, position 31); arrives in 3d
+2025-01-17 SKU_A | oh=  233 (+  0 in) | dem= 52 lost=  0 | WAIT     0 | fc=39.5/d sigma=9.4 SS=38.0; projected inv after 6d = 233+302-236.8 = 298.2 >= SS -> enough cover, wait (saves holding cost)
+2025-01-17 SKU_B | oh=  113 (+  0 in) | dem= 17 lost=  0 | WAIT     0 | fc=16.6/d sigma=4.6 SS=24.6; projected inv after 8d = 113+119-132.5 = 99.5 >= SS -> enough cover, wait (saves holding cost)
+2025-01-17 SKU_C | oh=   25 (+  0 in) | dem=  8 lost=  0 | WAIT     0 | fc=6.5/d sigma=3.4 SS=8.8; projected inv after 4d = 25+51-26.2 = 49.8 >= SS -> enough cover, wait (saves holding cost)
+2025-01-18 SKU_A | oh=  181 (+  0 in) | dem= 46 lost=  0 | WAIT     0 | fc=40.7/d sigma=9.8 SS=39.4; projected inv after 6d = 181+302-244.3 = 238.7 >= SS -> enough cover, wait (saves holding cost)
+2025-01-18 SKU_B | oh=   96 (+  0 in) | dem= 13 lost=  0 | WAIT     0 | fc=16.6/d sigma=4.4 SS=23.3; projected inv after 8d = 96+119-132.9 = 82.1 >= SS -> enough cover, wait (saves holding cost)
+2025-01-18 SKU_C | oh=   17 (+  0 in) | dem= 10 lost=  0 | WAIT     0 | fc=6.7/d sigma=3.3 SS=8.4; projected inv after 4d = 17+51-26.8 = 41.2 >= SS -> enough cover, wait (saves holding cost)
+2025-01-19 SKU_A | oh=  135 (+  0 in) | dem= 34 lost=  0 | WAIT     0 | fc=41.3/d sigma=9.4 SS=38.0; projected inv after 6d = 135+302-247.5 = 189.5 >= SS -> enough cover, wait (saves holding cost)
+2025-01-19 SKU_B | oh=   83 (+  0 in) | dem= 23 lost=  0 | WAIT     0 | fc=16.2/d sigma=4.3 SS=22.9; projected inv after 8d = 83+119-130.0 = 72.0 >= SS -> enough cover, wait (saves holding cost)
+2025-01-19 SKU_C | oh=   58 (+ 51 in) | dem=  1 lost=  0 | WAIT     0 | fc=7.0/d sigma=3.3 SS=8.4; projected inv after 4d = 58+0-28.1 = 29.9 >= SS -> enough cover, wait (saves holding cost)
+2025-01-20 SKU_A | oh=  101 (+  0 in) | dem= 34 lost=  0 | WAIT     0 | fc=40.5/d sigma=9.2 SS=37.2; projected inv after 6d = 101+302-243.2 = 159.8 >= SS -> enough cover, wait (saves holding cost)
+2025-01-20 SKU_B | oh=   60 (+  0 in) | dem= 16 lost=  0 | WAIT     0 | fc=16.9/d sigma=4.6 SS=24.6; projected inv after 8d = 60+119-135.4 = 43.6 >= SS -> enough cover, wait (saves holding cost)
+2025-01-20 SKU_C | oh=   57 (+  0 in) | dem=  2 lost=  0 | WAIT     0 | fc=6.4/d sigma=3.7 SS=9.4; projected inv after 4d = 57+0-25.7 = 31.3 >= SS -> enough cover, wait (saves holding cost)
+2025-01-21 SKU_A | oh=  369 (+302 in) | dem= 41 lost=  0 | WAIT     0 | fc=39.9/d sigma=9.0 SS=36.2; projected inv after 6d = 369+0-239.2 = 129.8 >= SS -> enough cover, wait (saves holding cost)
+2025-01-21 SKU_B | oh=   44 (+  0 in) | dem= 18 lost=  0 | WAIT     0 | fc=16.8/d sigma=4.4 SS=23.3; projected inv after 8d = 44+119-134.7 = 28.3 >= SS -> enough cover, wait (saves holding cost)
+2025-01-21 SKU_C | oh=   55 (+  0 in) | dem=  6 lost=  0 | WAIT     0 | fc=6.0/d sigma=3.7 SS=9.6; projected inv after 4d = 55+0-23.9 = 31.1 >= SS -> enough cover, wait (saves holding cost)
+2025-01-22 SKU_A | oh=  328 (+  0 in) | dem= 46 lost=  0 | WAIT     0 | fc=40.0/d sigma=8.5 SS=34.4; projected inv after 6d = 328+0-239.9 = 88.1 >= SS -> enough cover, wait (saves holding cost)
+2025-01-22 SKU_B | oh=  145 (+119 in) | dem= 19 lost=  0 | ORDER  132 | fc=16.9/d sigma=4.2 SS=22.2; projected inv after 8d = 145+0-135.6 = 9.4 < SS -> ORDER 132 (target 276, position 145); arrives in 7d
+2025-01-22 SKU_C | oh=   49 (+  0 in) | dem=  3 lost=  0 | WAIT     0 | fc=6.0/d sigma=3.5 SS=9.1; projected inv after 4d = 49+0-23.9 = 25.1 >= SS -> enough cover, wait (saves holding cost)
+2025-01-23 SKU_A | oh=  282 (+  0 in) | dem= 31 lost=  0 | WAIT     0 | fc=40.6/d sigma=8.3 SS=33.5; projected inv after 6d = 282+0-243.5 = 38.5 >= SS -> enough cover, wait (saves holding cost)
+2025-01-23 SKU_B | oh=  126 (+  0 in) | dem= 19 lost=  0 | WAIT     0 | fc=17.2/d sigma=4.0 SS=21.4; projected inv after 8d = 126+132-137.2 = 120.8 >= SS -> enough cover, wait (saves holding cost)
+2025-01-23 SKU_C | oh=   46 (+  0 in) | dem=  6 lost=  0 | WAIT     0 | fc=5.7/d sigma=3.5 SS=9.0; projected inv after 4d = 46+0-22.7 = 23.3 >= SS -> enough cover, wait (saves holding cost)
+2025-01-24 SKU_A | oh=  251 (+  0 in) | dem= 45 lost=  0 | ORDER  299 | fc=39.6/d sigma=8.5 SS=34.1; projected inv after 6d = 251+0-237.8 = 13.2 < SS -> ORDER 299 (target 549, position 251); arrives in 5d
+2025-01-24 SKU_B | oh=  107 (+  0 in) | dem= 22 lost=  0 | WAIT     0 | fc=17.3/d sigma=3.9 SS=20.5; projected inv after 8d = 107+132-138.7 = 100.3 >= SS -> enough cover, wait (saves holding cost)
+2025-01-24 SKU_C | oh=   40 (+  0 in) | dem=  9 lost=  0 | WAIT     0 | fc=5.7/d sigma=3.3 SS=8.5; projected inv after 4d = 40+0-22.9 = 17.1 >= SS -> enough cover, wait (saves holding cost)
+2025-01-25 SKU_A | oh=  206 (+  0 in) | dem= 56 lost=  0 | WAIT     0 | fc=40.2/d sigma=8.2 SS=33.1; projected inv after 6d = 206+299-241.0 = 264.0 >= SS -> enough cover, wait (saves holding cost)
+2025-01-25 SKU_B | oh=   85 (+  0 in) | dem= 16 lost=  0 | WAIT     0 | fc=17.8/d sigma=3.9 SS=21.0; projected inv after 8d = 85+132-142.4 = 74.6 >= SS -> enough cover, wait (saves holding cost)
+2025-01-25 SKU_C | oh=   31 (+  0 in) | dem= 10 lost=  0 | ORDER   44 | fc=6.0/d sigma=3.3 SS=8.5; projected inv after 4d = 31+0-24.2 = 6.8 < SS -> ORDER 44 (target 75, position 31); arrives in 3d
+2025-01-26 SKU_A | oh=  150 (+  0 in) | dem= 44 lost=  0 | WAIT     0 | fc=41.7/d sigma=9.3 SS=37.3; projected inv after 6d = 150+299-250.5 = 198.5 >= SS -> enough cover, wait (saves holding cost)
+2025-01-26 SKU_B | oh=   69 (+  0 in) | dem= 17 lost=  0 | WAIT     0 | fc=17.6/d sigma=3.8 SS=20.1; projected inv after 8d = 69+132-141.0 = 60.0 >= SS -> enough cover, wait (saves holding cost)
+2025-01-26 SKU_C | oh=   21 (+  0 in) | dem=  7 lost=  0 | WAIT     0 | fc=6.4/d sigma=3.4 SS=8.7; projected inv after 4d = 21+44-25.8 = 39.2 >= SS -> enough cover, wait (saves holding cost)
+2025-01-27 SKU_A | oh=  106 (+  0 in) | dem= 52 lost=  0 | WAIT     0 | fc=42.0/d sigma=8.8 SS=35.5; projected inv after 6d = 106+299-251.8 = 153.2 >= SS -> enough cover, wait (saves holding cost)
+2025-01-27 SKU_B | oh=   52 (+  0 in) | dem= 18 lost=  0 | WAIT     0 | fc=17.6/d sigma=3.6 SS=19.1; projected inv after 8d = 52+132-140.5 = 43.5 >= SS -> enough cover, wait (saves holding cost)
+2025-01-27 SKU_C | oh=   14 (+  0 in) | dem=  4 lost=  0 | WAIT     0 | fc=6.5/d sigma=3.2 SS=8.2; projected inv after 4d = 14+44-26.0 = 32.0 >= SS -> enough cover, wait (saves holding cost)
+2025-01-28 SKU_A | oh=   54 (+  0 in) | dem= 45 lost=  0 | WAIT     0 | fc=43.0/d sigma=8.9 SS=36.0; projected inv after 6d = 54+299-257.9 = 95.1 >= SS -> enough cover, wait (saves holding cost)
+2025-01-28 SKU_B | oh=   34 (+  0 in) | dem= 15 lost=  0 | WAIT     0 | fc=17.6/d sigma=3.4 SS=18.2; projected inv after 8d = 34+132-140.8 = 25.2 >= SS -> enough cover, wait (saves holding cost)
+2025-01-28 SKU_C | oh=   54 (+ 44 in) | dem= 10 lost=  0 | WAIT     0 | fc=6.2/d sigma=3.2 SS=8.1; projected inv after 4d = 54+0-25.0 = 29.0 >= SS -> enough cover, wait (saves holding cost)
+2025-01-29 SKU_A | oh=  308 (+299 in) | dem= 22 lost=  0 | WAIT     0 | fc=43.2/d sigma=8.5 SS=34.3; projected inv after 6d = 308+0-259.1 = 48.9 >= SS -> enough cover, wait (saves holding cost)
+2025-01-29 SKU_B | oh=  151 (+132 in) | dem= 16 lost=  0 | ORDER  127 | fc=17.3/d sigma=3.3 SS=17.8; projected inv after 8d = 151+0-138.8 = 12.2 < SS -> ORDER 127 (target 278, position 151); arrives in 7d
+2025-01-29 SKU_C | oh=   44 (+  0 in) | dem=  6 lost=  0 | WAIT     0 | fc=6.6/d sigma=3.2 SS=8.2; projected inv after 4d = 44+0-26.5 = 17.5 >= SS -> enough cover, wait (saves holding cost)
+2025-01-30 SKU_A | oh=  286 (+  0 in) | dem= 36 lost=  0 | ORDER  291 | fc=41.1/d sigma=10.5 SS=42.2; projected inv after 6d = 286+0-246.4 = 39.6 < SS -> ORDER 291 (target 576, position 286); arrives in 5d
+2025-01-30 SKU_B | oh=  135 (+  0 in) | dem= 19 lost=  0 | WAIT     0 | fc=17.2/d sigma=3.2 SS=17.0; projected inv after 8d = 135+127-137.7 = 124.3 >= SS -> enough cover, wait (saves holding cost)
+2025-01-30 SKU_C | oh=   38 (+  0 in) | dem=  7 lost=  0 | WAIT     0 | fc=6.6/d sigma=3.1 SS=7.8; projected inv after 4d = 38+0-26.2 = 11.8 >= SS -> enough cover, wait (saves holding cost)
+2025-01-31 SKU_A | oh=  250 (+  0 in) | dem= 41 lost=  0 | WAIT     0 | fc=40.6/d sigma=10.1 SS=40.6; projected inv after 6d = 250+291-243.3 = 297.7 >= SS -> enough cover, wait (saves holding cost)
+2025-01-31 SKU_B | oh=  116 (+  0 in) | dem= 30 lost=  0 | WAIT     0 | fc=17.4/d sigma=3.1 SS=16.4; projected inv after 8d = 116+127-139.1 = 103.9 >= SS -> enough cover, wait (saves holding cost)
+2025-01-31 SKU_C | oh=   31 (+  0 in) | dem=  6 lost=  0 | ORDER   50 | fc=6.6/d sigma=2.9 SS=7.4; projected inv after 4d = 31+0-26.4 = 4.6 < SS -> ORDER 50 (target 80, position 31); arrives in 3d
+2025-02-01 SKU_A | oh=  209 (+  0 in) | dem= 52 lost=  0 | WAIT     0 | fc=40.6/d sigma=9.6 SS=38.5; projected inv after 6d = 209+291-243.6 = 256.4 >= SS -> enough cover, wait (saves holding cost)
+2025-02-01 SKU_B | oh=   86 (+  0 in) | dem= 19 lost=  0 | WAIT     0 | fc=18.7/d sigma=4.9 SS=26.3; projected inv after 8d = 86+127-149.2 = 63.8 >= SS -> enough cover, wait (saves holding cost)
+2025-02-01 SKU_C | oh=   25 (+  0 in) | dem=  7 lost=  0 | WAIT     0 | fc=6.5/d sigma=2.8 SS=7.1; projected inv after 4d = 25+50-26.2 = 48.8 >= SS -> enough cover, wait (saves holding cost)
+2025-02-02 SKU_A | oh=  157 (+  0 in) | dem= 44 lost=  0 | WAIT     0 | fc=41.7/d sigma=9.8 SS=39.3; projected inv after 6d = 157+291-250.4 = 197.6 >= SS -> enough cover, wait (saves holding cost)
+2025-02-02 SKU_B | oh=   67 (+  0 in) | dem= 10 lost=  0 | WAIT     0 | fc=18.7/d sigma=4.7 SS=25.0; projected inv after 8d = 67+127-149.5 = 44.5 >= SS -> enough cover, wait (saves holding cost)
+2025-02-02 SKU_C | oh=   18 (+  0 in) | dem=  4 lost=  0 | WAIT     0 | fc=6.6/d sigma=2.6 SS=6.7; projected inv after 4d = 18+50-26.4 = 41.6 >= SS -> enough cover, wait (saves holding cost)
+2025-02-03 SKU_A | oh=  113 (+  0 in) | dem= 50 lost=  0 | WAIT     0 | fc=42.0/d sigma=9.3 SS=37.4; projected inv after 6d = 113+291-251.8 = 152.2 >= SS -> enough cover, wait (saves holding cost)
+2025-02-03 SKU_B | oh=   57 (+  0 in) | dem= 24 lost=  0 | WAIT     0 | fc=17.8/d sigma=5.2 SS=27.8; projected inv after 8d = 57+127-142.5 = 41.5 >= SS -> enough cover, wait (saves holding cost)
+2025-02-03 SKU_C | oh=   64 (+ 50 in) | dem=  6 lost=  0 | WAIT     0 | fc=6.3/d sigma=2.6 SS=6.7; projected inv after 4d = 64+0-25.3 = 38.7 >= SS -> enough cover, wait (saves holding cost)
+2025-02-04 SKU_A | oh=  354 (+291 in) | dem= 48 lost=  0 | WAIT     0 | fc=42.8/d sigma=9.2 SS=36.9; projected inv after 6d = 354+0-256.6 = 97.4 >= SS -> enough cover, wait (saves holding cost)
+2025-02-04 SKU_B | oh=   33 (+  0 in) | dem= 13 lost=  0 | ORDER  145 | fc=18.4/d sigma=5.3 SS=28.4; projected inv after 8d = 33+127-147.5 = 12.5 < SS -> ORDER 145 (target 305, position 160); arrives in 7d
+2025-02-04 SKU_C | oh=   58 (+  0 in) | dem=  6 lost=  0 | WAIT     0 | fc=6.3/d sigma=2.5 SS=6.4; projected inv after 4d = 58+0-25.2 = 32.8 >= SS -> enough cover, wait (saves holding cost)
+2025-02-05 SKU_A | oh=  306 (+  0 in) | dem= 43 lost=  0 | WAIT     0 | fc=43.3/d sigma=8.9 SS=35.7; projected inv after 6d = 306+0-259.8 = 46.2 >= SS -> enough cover, wait (saves holding cost)
+2025-02-05 SKU_B | oh=  147 (+127 in) | dem= 15 lost=  0 | WAIT     0 | fc=17.9/d sigma=5.3 SS=28.4; projected inv after 8d = 147+145-143.1 = 148.9 >= SS -> enough cover, wait (saves holding cost)
+2025-02-05 SKU_C | oh=   52 (+  0 in) | dem=  2 lost=  0 | WAIT     0 | fc=6.3/d sigma=2.4 SS=6.1; projected inv after 4d = 52+0-25.1 = 26.9 >= SS -> enough cover, wait (saves holding cost)
+2025-02-06 SKU_A | oh=  263 (+  0 in) | dem= 54 lost=  0 | ORDER  334 | fc=43.3/d sigma=8.4 SS=33.8; projected inv after 6d = 263+0-259.6 = 3.4 < SS -> ORDER 334 (target 596, position 263); arrives in 5d
+2025-02-06 SKU_B | oh=  132 (+  0 in) | dem= 19 lost=  0 | WAIT     0 | fc=17.6/d sigma=5.2 SS=27.4; projected inv after 8d = 132+145-140.8 = 136.2 >= SS -> enough cover, wait (saves holding cost)
+2025-02-06 SKU_C | oh=   50 (+  0 in) | dem=  6 lost=  0 | WAIT     0 | fc=5.8/d sigma=2.6 SS=6.7; projected inv after 4d = 50+0-23.4 = 26.6 >= SS -> enough cover, wait (saves holding cost)
+2025-02-07 SKU_A | oh=  209 (+  0 in) | dem= 50 lost=  0 | WAIT     0 | fc=44.3/d sigma=8.7 SS=34.9; projected inv after 6d = 209+334-266.0 = 277.0 >= SS -> enough cover, wait (saves holding cost)
+2025-02-07 SKU_B | oh=  113 (+  0 in) | dem= 26 lost=  0 | WAIT     0 | fc=17.7/d sigma=4.9 SS=26.1; projected inv after 8d = 113+145-141.9 = 116.1 >= SS -> enough cover, wait (saves holding cost)
+2025-02-07 SKU_C | oh=   44 (+  0 in) | dem=  9 lost=  0 | WAIT     0 | fc=5.9/d sigma=2.5 SS=6.4; projected inv after 4d = 44+0-23.4 = 20.6 >= SS -> enough cover, wait (saves holding cost)
+2025-02-08 SKU_A | oh=  159 (+  0 in) | dem= 45 lost=  0 | WAIT     0 | fc=44.9/d sigma=8.4 SS=33.9; projected inv after 6d = 159+334-269.4 = 223.6 >= SS -> enough cover, wait (saves holding cost)
+2025-02-08 SKU_B | oh=   87 (+  0 in) | dem= 28 lost=  0 | WAIT     0 | fc=18.6/d sigma=5.3 SS=28.4; projected inv after 8d = 87+145-148.5 = 83.5 >= SS -> enough cover, wait (saves holding cost)
+2025-02-08 SKU_C | oh=   35 (+  0 in) | dem=  4 lost=  0 | WAIT     0 | fc=6.2/d sigma=2.6 SS=6.6; projected inv after 4d = 35+0-24.7 = 10.3 >= SS -> enough cover, wait (saves holding cost)
+2025-02-09 SKU_A | oh=  114 (+  0 in) | dem= 37 lost=  0 | WAIT     0 | fc=44.9/d sigma=8.0 SS=32.1; projected inv after 6d = 114+334-269.5 = 178.5 >= SS -> enough cover, wait (saves holding cost)
+2025-02-09 SKU_B | oh=   59 (+  0 in) | dem= 18 lost=  0 | WAIT     0 | fc=19.5/d sigma=5.9 SS=31.3; projected inv after 8d = 59+145-156.1 = 47.9 >= SS -> enough cover, wait (saves holding cost)
+2025-02-09 SKU_C | oh=   31 (+  0 in) | dem=  8 lost=  0 | WAIT     0 | fc=6.0/d sigma=2.5 SS=6.5; projected inv after 4d = 31+0-23.8 = 7.2 >= SS -> enough cover, wait (saves holding cost)
+2025-02-10 SKU_A | oh=   77 (+  0 in) | dem= 36 lost=  0 | WAIT     0 | fc=44.1/d sigma=8.0 SS=32.1; projected inv after 6d = 77+334-264.7 = 146.3 >= SS -> enough cover, wait (saves holding cost)
+2025-02-10 SKU_B | oh=   41 (+  0 in) | dem= 22 lost=  0 | WAIT     0 | fc=19.4/d sigma=5.6 SS=29.8; projected inv after 8d = 41+145-154.9 = 31.1 >= SS -> enough cover, wait (saves holding cost)
+2025-02-10 SKU_C | oh=   23 (+  0 in) | dem=  7 lost=  0 | ORDER   52 | fc=6.2/d sigma=2.5 SS=6.3; projected inv after 4d = 23+0-24.6 = -1.6 < SS -> ORDER 52 (target 74, position 23); arrives in 3d
+2025-02-11 SKU_A | oh=  375 (+334 in) | dem= 58 lost=  0 | WAIT     0 | fc=43.3/d sigma=8.0 SS=32.2; projected inv after 6d = 375+0-259.9 = 115.1 >= SS -> enough cover, wait (saves holding cost)
+2025-02-11 SKU_B | oh=  164 (+145 in) | dem= 16 lost=  0 | ORDER  159 | fc=19.6/d sigma=5.4 SS=28.6; projected inv after 8d = 164+0-157.0 = 7.0 < SS -> ORDER 159 (target 323, position 164); arrives in 7d
+2025-02-11 SKU_C | oh=   16 (+  0 in) | dem=  5 lost=  0 | WAIT     0 | fc=6.2/d sigma=2.4 SS=6.1; projected inv after 4d = 16+52-25.0 = 43.0 >= SS -> enough cover, wait (saves holding cost)
+2025-02-12 SKU_A | oh=  317 (+  0 in) | dem= 40 lost=  0 | WAIT     0 | fc=44.8/d sigma=8.9 SS=35.8; projected inv after 6d = 317+0-268.7 = 48.3 >= SS -> enough cover, wait (saves holding cost)
+2025-02-12 SKU_B | oh=  148 (+  0 in) | dem= 19 lost=  0 | WAIT     0 | fc=19.3/d sigma=5.2 SS=27.8; projected inv after 8d = 148+159-154.1 = 152.9 >= SS -> enough cover, wait (saves holding cost)
+2025-02-12 SKU_C | oh=   11 (+  0 in) | dem=  5 lost=  0 | WAIT     0 | fc=6.1/d sigma=2.3 SS=5.8; projected inv after 4d = 11+52-24.5 = 38.5 >= SS -> enough cover, wait (saves holding cost)
+2025-02-13 SKU_A | oh=  277 (+  0 in) | dem= 54 lost=  0 | ORDER  334 | fc=44.3/d sigma=8.6 SS=34.5; projected inv after 6d = 277+0-265.8 = 11.2 < SS -> ORDER 334 (target 610, position 277); arrives in 5d
+2025-02-13 SKU_B | oh=  129 (+  0 in) | dem= 14 lost=  0 | WAIT     0 | fc=19.2/d sigma=5.0 SS=26.4; projected inv after 8d = 129+159-153.9 = 134.1 >= SS -> enough cover, wait (saves holding cost)
+2025-02-13 SKU_C | oh=   58 (+ 52 in) | dem=  5 lost=  0 | WAIT     0 | fc=6.0/d sigma=2.2 SS=5.6; projected inv after 4d = 58+0-24.0 = 34.0 >= SS -> enough cover, wait (saves holding cost)
+2025-02-14 SKU_A | oh=  223 (+  0 in) | dem= 58 lost=  0 | WAIT     0 | fc=45.3/d sigma=8.7 SS=35.0; projected inv after 6d = 223+334-271.6 = 285.4 >= SS -> enough cover, wait (saves holding cost)
+2025-02-14 SKU_B | oh=  115 (+  0 in) | dem= 12 lost=  0 | WAIT     0 | fc=18.7/d sigma=5.0 SS=26.5; projected inv after 8d = 115+159-149.7 = 124.3 >= SS -> enough cover, wait (saves holding cost)
+2025-02-14 SKU_C | oh=   53 (+  0 in) | dem=  8 lost=  0 | WAIT     0 | fc=5.9/d sigma=2.1 SS=5.4; projected inv after 4d = 53+0-23.6 = 29.4 >= SS -> enough cover, wait (saves holding cost)
+2025-02-15 SKU_A | oh=  165 (+  0 in) | dem= 61 lost=  0 | WAIT     0 | fc=46.5/d sigma=9.2 SS=37.0; projected inv after 6d = 165+334-279.3 = 219.7 >= SS -> enough cover, wait (saves holding cost)
+2025-02-15 SKU_B | oh=  103 (+  0 in) | dem= 13 lost=  0 | WAIT     0 | fc=18.0/d sigma=5.2 SS=27.6; projected inv after 8d = 103+159-144.3 = 117.7 >= SS -> enough cover, wait (saves holding cost)
+2025-02-15 SKU_C | oh=   45 (+  0 in) | dem=  9 lost=  0 | WAIT     0 | fc=6.1/d sigma=2.1 SS=5.4; projected inv after 4d = 45+0-24.5 = 20.5 >= SS -> enough cover, wait (saves holding cost)
+2025-02-16 SKU_A | oh=  104 (+  0 in) | dem= 41 lost=  0 | WAIT     0 | fc=48.0/d sigma=9.8 SS=39.6; projected inv after 6d = 104+334-287.9 = 150.1 >= SS -> enough cover, wait (saves holding cost)
+2025-02-16 SKU_B | oh=   90 (+  0 in) | dem= 13 lost=  0 | WAIT     0 | fc=17.5/d sigma=5.2 SS=27.5; projected inv after 8d = 90+159-140.3 = 108.7 >= SS -> enough cover, wait (saves holding cost)
+2025-02-16 SKU_C | oh=   36 (+  0 in) | dem=  2 lost=  0 | WAIT     0 | fc=6.4/d sigma=2.2 SS=5.6; projected inv after 4d = 36+0-25.6 = 10.4 >= SS -> enough cover, wait (saves holding cost)
+2025-02-17 SKU_A | oh=   63 (+  0 in) | dem= 41 lost=  0 | WAIT     0 | fc=47.3/d sigma=9.6 SS=38.6; projected inv after 6d = 63+334-283.7 = 113.3 >= SS -> enough cover, wait (saves holding cost)
+2025-02-17 SKU_B | oh=   77 (+  0 in) | dem= 17 lost=  0 | WAIT     0 | fc=17.1/d sigma=5.1 SS=27.2; projected inv after 8d = 77+159-136.7 = 99.3 >= SS -> enough cover, wait (saves holding cost)
+2025-02-17 SKU_C | oh=   34 (+  0 in) | dem=  5 lost=  0 | WAIT     0 | fc=6.0/d sigma=2.5 SS=6.4; projected inv after 4d = 34+0-23.9 = 10.1 >= SS -> enough cover, wait (saves holding cost)
+2025-02-18 SKU_A | oh=  356 (+334 in) | dem= 41 lost=  0 | WAIT     0 | fc=46.7/d sigma=9.3 SS=37.5; projected inv after 6d = 356+0-280.0 = 76.0 >= SS -> enough cover, wait (saves holding cost)
+2025-02-18 SKU_B | oh=  219 (+159 in) | dem= 17 lost=  0 | WAIT     0 | fc=17.1/d sigma=4.8 SS=25.8; projected inv after 8d = 219+0-136.6 = 82.4 >= SS -> enough cover, wait (saves holding cost)
+2025-02-18 SKU_C | oh=   29 (+  0 in) | dem=  4 lost=  0 | ORDER   42 | fc=5.9/d sigma=2.4 SS=6.1; projected inv after 4d = 29+0-23.5 = 5.5 < SS -> ORDER 42 (target 71, position 29); arrives in 3d
+2025-02-19 SKU_A | oh=  315 (+  0 in) | dem= 47 lost=  0 | WAIT     0 | fc=46.1/d sigma=9.0 SS=36.3; projected inv after 6d = 315+0-276.6 = 38.4 >= SS -> enough cover, wait (saves holding cost)
+2025-02-19 SKU_B | oh=  202 (+  0 in) | dem= 36 lost=  0 | WAIT     0 | fc=17.1/d sigma=4.6 SS=24.5; projected inv after 8d = 202+0-136.5 = 65.5 >= SS -> enough cover, wait (saves holding cost)
+2025-02-19 SKU_C | oh=   25 (+  0 in) | dem=  5 lost=  0 | WAIT     0 | fc=5.7/d sigma=2.3 SS=6.0; projected inv after 4d = 25+42-22.7 = 44.3 >= SS -> enough cover, wait (saves holding cost)
+2025-02-20 SKU_A | oh=  268 (+  0 in) | dem= 48 lost=  0 | ORDER  367 | fc=46.2/d sigma=8.6 SS=34.4; projected inv after 6d = 268+0-277.1 = -9.1 < SS -> ORDER 367 (target 635, position 268); arrives in 5d
+2025-02-20 SKU_B | oh=  166 (+  0 in) | dem= 40 lost=  0 | ORDER  158 | fc=19.0/d sigma=7.4 SS=39.4; projected inv after 8d = 166+0-151.7 = 14.3 < SS -> ORDER 158 (target 324, position 166); arrives in 7d
+2025-02-20 SKU_C | oh=   20 (+  0 in) | dem= 21 lost=  1 | WAIT     0 | fc=5.6/d sigma=2.2 SS=5.7; projected inv after 4d = 20+42-22.4 = 39.6 >= SS -> enough cover, wait (saves holding cost)
+2025-02-21 SKU_A | oh=  220 (+  0 in) | dem= 53 lost=  0 | WAIT     0 | fc=46.4/d sigma=8.1 SS=32.8; projected inv after 6d = 220+367-278.2 = 308.8 >= SS -> enough cover, wait (saves holding cost)
+2025-02-21 SKU_B | oh=  126 (+  0 in) | dem= 21 lost=  0 | WAIT     0 | fc=21.1/d sigma=9.7 SS=51.5; projected inv after 8d = 126+158-168.5 = 115.5 >= SS -> enough cover, wait (saves holding cost)
+2025-02-21 SKU_C | oh=   42 (+ 42 in) | dem= 16 lost=  0 | ORDER   51 | fc=7.2/d sigma=5.3 SS=13.6; projected inv after 4d = 42+0-28.6 = 13.4 < SS -> ORDER 51 (target 92, position 42); arrives in 3d
+2025-02-22 SKU_A | oh=  167 (+  0 in) | dem= 50 lost=  0 | WAIT     0 | fc=47.0/d sigma=8.0 SS=32.2; projected inv after 6d = 167+367-282.2 = 251.8 >= SS -> enough cover, wait (saves holding cost)
+2025-02-22 SKU_B | oh=  105 (+  0 in) | dem= 18 lost=  0 | WAIT     0 | fc=21.1/d sigma=9.2 SS=48.8; projected inv after 8d = 105+158-168.5 = 94.5 >= SS -> enough cover, wait (saves holding cost)
+2025-02-22 SKU_C | oh=   26 (+  0 in) | dem=  7 lost=  0 | WAIT     0 | fc=8.0/d sigma=5.8 SS=14.8; projected inv after 4d = 26+51-32.1 = 44.9 >= SS -> enough cover, wait (saves holding cost)
+2025-02-23 SKU_A | oh=  117 (+  0 in) | dem= 29 lost=  0 | WAIT     0 | fc=47.3/d sigma=7.6 SS=30.8; projected inv after 6d = 117+367-284.0 = 200.0 >= SS -> enough cover, wait (saves holding cost)
+2025-02-23 SKU_B | oh=   87 (+  0 in) | dem= 10 lost=  0 | WAIT     0 | fc=20.8/d sigma=8.8 SS=46.6; projected inv after 8d = 87+158-166.0 = 79.0 >= SS -> enough cover, wait (saves holding cost)
+2025-02-23 SKU_C | oh=   19 (+  0 in) | dem=  7 lost=  0 | WAIT     0 | fc=7.9/d sigma=5.5 SS=14.0; projected inv after 4d = 19+51-31.7 = 38.3 >= SS -> enough cover, wait (saves holding cost)
+2025-02-24 SKU_A | oh=   88 (+  0 in) | dem= 57 lost=  0 | WAIT     0 | fc=45.5/d sigma=9.3 SS=37.4; projected inv after 6d = 88+367-273.0 = 182.0 >= SS -> enough cover, wait (saves holding cost)
+2025-02-24 SKU_B | oh=   77 (+  0 in) | dem= 27 lost=  0 | WAIT     0 | fc=19.7/d sigma=9.0 SS=47.8; projected inv after 8d = 77+158-157.4 = 77.6 >= SS -> enough cover, wait (saves holding cost)
+2025-02-24 SKU_C | oh=   63 (+ 51 in) | dem=  1 lost=  0 | WAIT     0 | fc=7.8/d sigma=5.2 SS=13.3; projected inv after 4d = 63+0-31.4 = 31.6 >= SS -> enough cover, wait (saves holding cost)
+2025-02-25 SKU_A | oh=  398 (+367 in) | dem= 48 lost=  0 | WAIT     0 | fc=46.6/d sigma=9.5 SS=38.4; projected inv after 6d = 398+0-279.9 = 118.1 >= SS -> enough cover, wait (saves holding cost)
+2025-02-25 SKU_B | oh=   50 (+  0 in) | dem= 17 lost=  0 | ORDER  146 | fc=20.4/d sigma=8.8 SS=47.0; projected inv after 8d = 50+158-163.3 = 44.7 < SS -> ORDER 146 (target 353, position 208); arrives in 7d
+2025-02-25 SKU_C | oh=   62 (+  0 in) | dem=  3 lost=  0 | WAIT     0 | fc=7.2/d sigma=5.4 SS=13.8; projected inv after 4d = 62+0-28.6 = 33.4 >= SS -> enough cover, wait (saves holding cost)
+2025-02-26 SKU_A | oh=  350 (+  0 in) | dem= 37 lost=  0 | WAIT     0 | fc=46.8/d sigma=9.0 SS=36.5; projected inv after 6d = 350+0-280.7 = 69.3 >= SS -> enough cover, wait (saves holding cost)
+2025-02-26 SKU_B | oh=   33 (+  0 in) | dem= 18 lost=  0 | WAIT     0 | fc=20.1/d sigma=8.4 SS=44.9; projected inv after 8d = 33+304-160.5 = 176.5 >= SS -> enough cover, wait (saves holding cost)
+2025-02-26 SKU_C | oh=   59 (+  0 in) | dem=  2 lost=  0 | WAIT     0 | fc=6.7/d sigma=5.3 SS=13.5; projected inv after 4d = 59+0-27.0 = 32.0 >= SS -> enough cover, wait (saves holding cost)
+2025-02-27 SKU_A | oh=  313 (+  0 in) | dem= 46 lost=  0 | WAIT     0 | fc=45.8/d sigma=9.1 SS=36.8; projected inv after 6d = 313+0-274.8 = 38.2 >= SS -> enough cover, wait (saves holding cost)
+2025-02-27 SKU_B | oh=  173 (+158 in) | dem= 24 lost=  0 | WAIT     0 | fc=19.9/d sigma=8.0 SS=42.8; projected inv after 8d = 173+146-158.9 = 160.1 >= SS -> enough cover, wait (saves holding cost)
+2025-02-27 SKU_C | oh=   57 (+  0 in) | dem=  9 lost=  0 | WAIT     0 | fc=6.3/d sigma=5.2 SS=13.4; projected inv after 4d = 57+0-25.1 = 31.9 >= SS -> enough cover, wait (saves holding cost)
+2025-02-28 SKU_A | oh=  267 (+  0 in) | dem= 41 lost=  0 | ORDER  364 | fc=45.8/d sigma=8.7 SS=34.9; projected inv after 6d = 267+0-274.9 = -7.9 < SS -> ORDER 364 (target 631, position 267); arrives in 5d
+2025-02-28 SKU_B | oh=  149 (+  0 in) | dem= 17 lost=  0 | WAIT     0 | fc=20.3/d sigma=7.7 SS=41.2; projected inv after 8d = 149+146-162.2 = 132.8 >= SS -> enough cover, wait (saves holding cost)
+2025-02-28 SKU_C | oh=   48 (+  0 in) | dem=  4 lost=  0 | WAIT     0 | fc=6.5/d sigma=5.0 SS=12.9; projected inv after 4d = 48+0-26.2 = 21.8 >= SS -> enough cover, wait (saves holding cost)
+2025-03-01 SKU_A | oh=  226 (+  0 in) | dem= 61 lost=  0 | WAIT     0 | fc=45.3/d sigma=8.4 SS=33.7; projected inv after 6d = 226+364-272.0 = 318.0 >= SS -> enough cover, wait (saves holding cost)
+2025-03-01 SKU_B | oh=  132 (+  0 in) | dem= 31 lost=  0 | WAIT     0 | fc=19.9/d sigma=7.4 SS=39.4; projected inv after 8d = 132+146-159.6 = 118.4 >= SS -> enough cover, wait (saves holding cost)
+2025-03-01 SKU_C | oh=   44 (+  0 in) | dem=  7 lost=  0 | WAIT     0 | fc=6.3/d sigma=4.8 SS=12.4; projected inv after 4d = 44+0-25.1 = 18.9 >= SS -> enough cover, wait (saves holding cost)
+2025-03-02 SKU_A | oh=  165 (+  0 in) | dem= 23 lost=  0 | WAIT     0 | fc=46.9/d sigma=9.3 SS=37.6; projected inv after 6d = 165+364-281.4 = 247.6 >= SS -> enough cover, wait (saves holding cost)
+2025-03-02 SKU_B | oh=  101 (+  0 in) | dem= 21 lost=  0 | WAIT     0 | fc=21.1/d sigma=7.9 SS=41.8; projected inv after 8d = 101+146-168.4 = 78.6 >= SS -> enough cover, wait (saves holding cost)
+2025-03-02 SKU_C | oh=   37 (+  0 in) | dem=  9 lost=  0 | ORDER   45 | fc=6.4/d sigma=4.6 SS=11.8; projected inv after 4d = 37+0-25.4 = 11.6 < SS -> ORDER 45 (target 82, position 37); arrives in 3d
+2025-03-03 SKU_A | oh=  142 (+  0 in) | dem= 36 lost=  0 | WAIT     0 | fc=44.5/d sigma=11.7 SS=46.9; projected inv after 6d = 142+364-267.1 = 238.9 >= SS -> enough cover, wait (saves holding cost)
+2025-03-03 SKU_B | oh=   80 (+  0 in) | dem= 13 lost=  0 | WAIT     0 | fc=21.0/d sigma=7.5 SS=39.6; projected inv after 8d = 80+146-168.4 = 57.6 >= SS -> enough cover, wait (saves holding cost)
+2025-03-03 SKU_C | oh=   28 (+  0 in) | dem=  4 lost=  0 | WAIT     0 | fc=6.6/d sigma=4.4 SS=11.4; projected inv after 4d = 28+45-26.5 = 46.5 >= SS -> enough cover, wait (saves holding cost)
+2025-03-04 SKU_A | oh=  106 (+  0 in) | dem= 35 lost=  0 | WAIT     0 | fc=43.7/d sigma=11.4 SS=45.8; projected inv after 6d = 106+364-262.0 = 208.0 >= SS -> enough cover, wait (saves holding cost)
+2025-03-04 SKU_B | oh=  213 (+146 in) | dem= 19 lost=  0 | WAIT     0 | fc=20.2/d sigma=7.5 SS=40.0; projected inv after 8d = 213+0-161.9 = 51.1 >= SS -> enough cover, wait (saves holding cost)
+2025-03-04 SKU_C | oh=   24 (+  0 in) | dem=  4 lost=  0 | WAIT     0 | fc=6.4/d sigma=4.3 SS=11.0; projected inv after 4d = 24+45-25.4 = 43.6 >= SS -> enough cover, wait (saves holding cost)
+2025-03-05 SKU_A | oh=  435 (+364 in) | dem= 63 lost=  0 | WAIT     0 | fc=42.8/d sigma=11.1 SS=44.9; projected inv after 6d = 435+0-256.8 = 178.2 >= SS -> enough cover, wait (saves holding cost)
+2025-03-05 SKU_B | oh=  194 (+  0 in) | dem= 21 lost=  0 | ORDER  146 | fc=20.1/d sigma=7.1 SS=38.0; projected inv after 8d = 194+0-160.9 = 33.1 < SS -> ORDER 146 (target 340, position 194); arrives in 7d
+2025-03-05 SKU_C | oh=   65 (+ 45 in) | dem=  3 lost=  0 | WAIT     0 | fc=6.1/d sigma=4.1 SS=10.6; projected inv after 4d = 65+0-24.5 = 40.5 >= SS -> enough cover, wait (saves holding cost)
+2025-03-06 SKU_A | oh=  372 (+  0 in) | dem= 51 lost=  0 | WAIT     0 | fc=44.8/d sigma=12.3 SS=49.7; projected inv after 6d = 372+0-268.9 = 103.1 >= SS -> enough cover, wait (saves holding cost)
+2025-03-06 SKU_B | oh=  173 (+  0 in) | dem= 23 lost=  0 | WAIT     0 | fc=20.2/d sigma=6.8 SS=36.1; projected inv after 8d = 173+146-161.7 = 157.3 >= SS -> enough cover, wait (saves holding cost)
+2025-03-06 SKU_C | oh=   62 (+  0 in) | dem=  6 lost=  0 | WAIT     0 | fc=5.8/d sigma=4.1 SS=10.4; projected inv after 4d = 62+0-23.2 = 38.8 >= SS -> enough cover, wait (saves holding cost)
+2025-03-07 SKU_A | oh=  321 (+  0 in) | dem= 53 lost=  0 | WAIT     0 | fc=45.4/d sigma=11.9 SS=47.8; projected inv after 6d = 321+0-272.6 = 48.4 >= SS -> enough cover, wait (saves holding cost)
+2025-03-07 SKU_B | oh=  150 (+  0 in) | dem= 18 lost=  0 | WAIT     0 | fc=20.5/d sigma=6.5 SS=34.5; projected inv after 8d = 150+146-163.9 = 132.1 >= SS -> enough cover, wait (saves holding cost)
+2025-03-07 SKU_C | oh=   56 (+  0 in) | dem=  7 lost=  0 | WAIT     0 | fc=5.8/d sigma=3.8 SS=9.9; projected inv after 4d = 56+0-23.3 = 32.7 >= SS -> enough cover, wait (saves holding cost)
+2025-03-08 SKU_A | oh=  268 (+  0 in) | dem= 54 lost=  0 | ORDER  379 | fc=46.2/d sigma=11.5 SS=46.4; projected inv after 6d = 268+0-277.2 = -9.2 < SS -> ORDER 379 (target 647, position 268); arrives in 5d
+2025-03-08 SKU_B | oh=  132 (+  0 in) | dem= 31 lost=  0 | WAIT     0 | fc=20.2/d sigma=6.2 SS=33.0; projected inv after 8d = 132+146-161.9 = 116.1 >= SS -> enough cover, wait (saves holding cost)
+2025-03-08 SKU_C | oh=   49 (+  0 in) | dem=  8 lost=  0 | WAIT     0 | fc=5.9/d sigma=3.7 SS=9.4; projected inv after 4d = 49+0-23.8 = 25.2 >= SS -> enough cover, wait (saves holding cost)
+2025-03-09 SKU_A | oh=  214 (+  0 in) | dem= 38 lost=  0 | WAIT     0 | fc=47.0/d sigma=11.2 SS=45.1; projected inv after 6d = 214+379-281.8 = 311.2 >= SS -> enough cover, wait (saves holding cost)
+2025-03-09 SKU_B | oh=  101 (+  0 in) | dem= 23 lost=  0 | WAIT     0 | fc=21.3/d sigma=6.8 SS=36.2; projected inv after 8d = 101+146-170.5 = 76.5 >= SS -> enough cover, wait (saves holding cost)
+2025-03-09 SKU_C | oh=   41 (+  0 in) | dem=  2 lost=  0 | WAIT     0 | fc=6.2/d sigma=3.5 SS=9.1; projected inv after 4d = 41+0-24.6 = 16.4 >= SS -> enough cover, wait (saves holding cost)
+2025-03-10 SKU_A | oh=  176 (+  0 in) | dem= 30 lost=  0 | WAIT     0 | fc=46.1/d sigma=11.0 SS=44.3; projected inv after 6d = 176+379-276.5 = 278.5 >= SS -> enough cover, wait (saves holding cost)
+2025-03-10 SKU_B | oh=   78 (+  0 in) | dem= 17 lost=  0 | WAIT     0 | fc=21.5/d sigma=6.5 SS=34.4; projected inv after 8d = 78+146-171.9 = 52.1 >= SS -> enough cover, wait (saves holding cost)
+2025-03-10 SKU_C | oh=   39 (+  0 in) | dem=  2 lost=  0 | WAIT     0 | fc=5.7/d sigma=3.6 SS=9.2; projected inv after 4d = 39+0-22.9 = 16.1 >= SS -> enough cover, wait (saves holding cost)
+2025-03-11 SKU_A | oh=  146 (+  0 in) | dem= 49 lost=  0 | WAIT     0 | fc=44.5/d sigma=11.6 SS=46.8; projected inv after 6d = 146+379-266.8 = 258.2 >= SS -> enough cover, wait (saves holding cost)
+2025-03-11 SKU_B | oh=   61 (+  0 in) | dem= 17 lost=  0 | WAIT     0 | fc=21.0/d sigma=6.3 SS=33.5; projected inv after 8d = 61+146-168.3 = 38.7 >= SS -> enough cover, wait (saves holding cost)
+2025-03-11 SKU_C | oh=   37 (+  0 in) | dem=  5 lost=  0 | WAIT     0 | fc=5.4/d sigma=3.6 SS=9.3; projected inv after 4d = 37+0-21.5 = 15.5 >= SS -> enough cover, wait (saves holding cost)
+2025-03-12 SKU_A | oh=   97 (+  0 in) | dem= 51 lost=  0 | WAIT     0 | fc=44.9/d sigma=11.1 SS=44.7; projected inv after 6d = 97+379-269.5 = 206.5 >= SS -> enough cover, wait (saves holding cost)
+2025-03-12 SKU_B | oh=  190 (+146 in) | dem= 18 lost=  0 | ORDER  152 | fc=20.6/d sigma=6.1 SS=32.5; projected inv after 8d = 190+0-165.0 = 25.0 < SS -> ORDER 152 (target 342, position 190); arrives in 7d
+2025-03-12 SKU_C | oh=   32 (+  0 in) | dem=  6 lost=  0 | WAIT     0 | fc=5.3/d sigma=3.4 SS=8.8; projected inv after 4d = 32+0-21.3 = 10.7 >= SS -> enough cover, wait (saves holding cost)
+2025-03-13 SKU_A | oh=  425 (+379 in) | dem= 43 lost=  0 | WAIT     0 | fc=45.5/d sigma=10.7 SS=43.1; projected inv after 6d = 425+0-273.2 = 151.8 >= SS -> enough cover, wait (saves holding cost)
+2025-03-13 SKU_B | oh=  172 (+  0 in) | dem= 12 lost=  0 | WAIT     0 | fc=20.4/d sigma=5.9 SS=31.2; projected inv after 8d = 172+152-162.9 = 161.1 >= SS -> enough cover, wait (saves holding cost)
+2025-03-13 SKU_C | oh=   26 (+  0 in) | dem=  2 lost=  0 | ORDER   42 | fc=5.4/d sigma=3.3 SS=8.4; projected inv after 4d = 26+0-21.6 = 4.4 < SS -> ORDER 42 (target 68, position 26); arrives in 3d
+2025-03-14 SKU_A | oh=  382 (+  0 in) | dem= 69 lost=  0 | WAIT     0 | fc=45.3/d sigma=10.2 SS=41.1; projected inv after 6d = 382+0-271.7 = 110.3 >= SS -> enough cover, wait (saves holding cost)
+2025-03-14 SKU_B | oh=  160 (+  0 in) | dem= 25 lost=  0 | WAIT     0 | fc=19.5/d sigma=6.2 SS=32.8; projected inv after 8d = 160+152-156.2 = 155.8 >= SS -> enough cover, wait (saves holding cost)
+2025-03-14 SKU_C | oh=   24 (+  0 in) | dem=  4 lost=  0 | WAIT     0 | fc=5.1/d sigma=3.3 SS=8.4; projected inv after 4d = 24+42-20.2 = 45.8 >= SS -> enough cover, wait (saves holding cost)
+2025-03-15 SKU_A | oh=  313 (+  0 in) | dem= 53 lost=  0 | ORDER  356 | fc=47.6/d sigma=12.2 SS=49.3; projected inv after 6d = 313+0-285.9 = 27.1 < SS -> ORDER 356 (target 669, position 313); arrives in 5d
+2025-03-15 SKU_B | oh=  135 (+  0 in) | dem= 27 lost=  0 | WAIT     0 | fc=20.1/d sigma=6.1 SS=32.4; projected inv after 8d = 135+152-160.6 = 126.4 >= SS -> enough cover, wait (saves holding cost)
+2025-03-15 SKU_C | oh=   20 (+  0 in) | dem=  5 lost=  0 | WAIT     0 | fc=4.9/d sigma=3.1 SS=8.0; projected inv after 4d = 20+42-19.8 = 42.2 >= SS -> enough cover, wait (saves holding cost)
+2025-03-16 SKU_A | oh=  260 (+  0 in) | dem= 29 lost=  0 | WAIT     0 | fc=48.2/d sigma=11.7 SS=47.3; projected inv after 6d = 260+356-289.1 = 326.9 >= SS -> enough cover, wait (saves holding cost)
+2025-03-16 SKU_B | oh=  108 (+  0 in) | dem= 12 lost=  0 | WAIT     0 | fc=20.8/d sigma=6.2 SS=32.9; projected inv after 8d = 108+152-166.2 = 93.8 >= SS -> enough cover, wait (saves holding cost)
+2025-03-16 SKU_C | oh=   57 (+ 42 in) | dem=  3 lost=  0 | WAIT     0 | fc=5.0/d sigma=3.0 SS=7.6; projected inv after 4d = 57+0-19.8 = 37.2 >= SS -> enough cover, wait (saves holding cost)
+2025-03-17 SKU_A | oh=  231 (+  0 in) | dem= 54 lost=  0 | WAIT     0 | fc=46.3/d sigma=12.7 SS=51.1; projected inv after 6d = 231+356-277.6 = 309.4 >= SS -> enough cover, wait (saves holding cost)
+2025-03-17 SKU_B | oh=   96 (+  0 in) | dem= 17 lost=  0 | WAIT     0 | fc=19.9/d sigma=6.5 SS=34.5; projected inv after 8d = 96+152-159.1 = 88.9 >= SS -> enough cover, wait (saves holding cost)
+2025-03-17 SKU_C | oh=   54 (+  0 in) | dem=  4 lost=  0 | WAIT     0 | fc=4.8/d sigma=2.9 SS=7.4; projected inv after 4d = 54+0-19.0 = 35.0 >= SS -> enough cover, wait (saves holding cost)
+2025-03-18 SKU_A | oh=  177 (+  0 in) | dem= 61 lost=  0 | WAIT     0 | fc=47.0/d sigma=12.3 SS=49.4; projected inv after 6d = 177+356-282.2 = 250.8 >= SS -> enough cover, wait (saves holding cost)
+2025-03-18 SKU_B | oh=   79 (+  0 in) | dem= 21 lost=  0 | WAIT     0 | fc=19.6/d sigma=6.2 SS=33.1; projected inv after 8d = 79+152-156.8 = 74.2 >= SS -> enough cover, wait (saves holding cost)
+2025-03-18 SKU_C | oh=   50 (+  0 in) | dem=  4 lost=  0 | WAIT     0 | fc=4.7/d sigma=2.7 SS=7.0; projected inv after 4d = 50+0-18.7 = 31.3 >= SS -> enough cover, wait (saves holding cost)
+2025-03-19 SKU_A | oh=  116 (+  0 in) | dem= 50 lost=  0 | WAIT     0 | fc=48.4/d sigma=12.5 SS=50.2; projected inv after 6d = 116+356-290.6 = 181.4 >= SS -> enough cover, wait (saves holding cost)
+2025-03-19 SKU_B | oh=  210 (+152 in) | dem= 15 lost=  0 | WAIT     0 | fc=19.7/d sigma=5.9 SS=31.5; projected inv after 8d = 210+0-157.9 = 52.1 >= SS -> enough cover, wait (saves holding cost)
+2025-03-19 SKU_C | oh=   46 (+  0 in) | dem=  6 lost=  0 | WAIT     0 | fc=4.6/d sigma=2.6 SS=6.7; projected inv after 4d = 46+0-18.5 = 27.5 >= SS -> enough cover, wait (saves holding cost)
+2025-03-20 SKU_A | oh=  422 (+356 in) | dem= 56 lost=  0 | WAIT     0 | fc=48.6/d sigma=11.8 SS=47.6; projected inv after 6d = 422+0-291.5 = 130.5 >= SS -> enough cover, wait (saves holding cost)
+2025-03-20 SKU_B | oh=  195 (+  0 in) | dem= 15 lost=  0 | WAIT     0 | fc=19.3/d sigma=5.8 SS=30.9; projected inv after 8d = 195+0-154.2 = 40.8 >= SS -> enough cover, wait (saves holding cost)
+2025-03-20 SKU_C | oh=   40 (+  0 in) | dem=  3 lost=  0 | WAIT     0 | fc=4.8/d sigma=2.5 SS=6.5; projected inv after 4d = 40+0-19.0 = 21.0 >= SS -> enough cover, wait (saves holding cost)
+2025-03-21 SKU_A | oh=  366 (+  0 in) | dem= 67 lost=  0 | WAIT     0 | fc=49.3/d sigma=11.5 SS=46.2; projected inv after 6d = 366+0-296.0 = 70.0 >= SS -> enough cover, wait (saves holding cost)
+2025-03-21 SKU_B | oh=  180 (+  0 in) | dem= 22 lost=  0 | ORDER  133 | fc=18.8/d sigma=5.7 SS=30.2; projected inv after 8d = 180+0-150.7 = 29.3 < SS -> ORDER 133 (target 313, position 180); arrives in 7d
+2025-03-21 SKU_C | oh=   37 (+  0 in) | dem=  5 lost=  0 | WAIT     0 | fc=4.6/d sigma=2.5 SS=6.3; projected inv after 4d = 37+0-18.3 = 18.7 >= SS -> enough cover, wait (saves holding cost)
+2025-03-22 SKU_A | oh=  299 (+  0 in) | dem=112 lost=  0 | ORDER  415 | fc=51.1/d sigma=12.2 SS=49.2; projected inv after 6d = 299+0-306.6 = -7.6 < SS -> ORDER 415 (target 714, position 299); arrives in 5d
+2025-03-22 SKU_B | oh=  158 (+  0 in) | dem= 16 lost=  0 | WAIT     0 | fc=19.2/d sigma=5.5 SS=29.1; projected inv after 8d = 158+133-153.3 = 137.7 >= SS -> enough cover, wait (saves holding cost)
+2025-03-22 SKU_C | oh=   32 (+  0 in) | dem= 10 lost=  0 | WAIT     0 | fc=4.6/d sigma=2.3 SS=6.0; projected inv after 4d = 32+0-18.5 = 13.5 >= SS -> enough cover, wait (saves holding cost)
+2025-03-23 SKU_A | oh=  187 (+  0 in) | dem= 75 lost=  0 | WAIT     0 | fc=57.2/d sigma=22.5 SS=90.6; projected inv after 6d = 187+415-343.1 = 258.9 >= SS -> enough cover, wait (saves holding cost)
+2025-03-23 SKU_B | oh=  142 (+  0 in) | dem= 16 lost=  0 | WAIT     0 | fc=18.8/d sigma=5.3 SS=28.1; projected inv after 8d = 142+133-150.7 = 124.3 >= SS -> enough cover, wait (saves holding cost)
+2025-03-23 SKU_C | oh=   22 (+  0 in) | dem=  3 lost=  0 | ORDER   42 | fc=5.2/d sigma=2.8 SS=7.1; projected inv after 4d = 22+0-20.6 = 1.4 < SS -> ORDER 42 (target 64, position 22); arrives in 3d
+2025-03-24 SKU_A | oh=  112 (+  0 in) | dem= 45 lost=  0 | WAIT     0 | fc=59.0/d sigma=22.1 SS=88.9; projected inv after 6d = 112+415-353.8 = 173.2 >= SS -> enough cover, wait (saves holding cost)
+2025-03-24 SKU_B | oh=  126 (+  0 in) | dem= 16 lost=  0 | WAIT     0 | fc=18.6/d sigma=5.1 SS=27.1; projected inv after 8d = 126+133-148.5 = 110.5 >= SS -> enough cover, wait (saves holding cost)
+2025-03-24 SKU_C | oh=   19 (+  0 in) | dem=  5 lost=  0 | WAIT     0 | fc=4.9/d sigma=2.7 SS=7.0; projected inv after 4d = 19+42-19.8 = 41.2 >= SS -> enough cover, wait (saves holding cost)
+2025-03-25 SKU_A | oh=   67 (+  0 in) | dem= 45 lost=  0 | WAIT     0 | fc=57.6/d sigma=21.4 SS=86.2; projected inv after 6d = 67+415-345.4 = 136.6 >= SS -> enough cover, wait (saves holding cost)
+2025-03-25 SKU_B | oh=  110 (+  0 in) | dem= 19 lost=  0 | WAIT     0 | fc=18.3/d sigma=4.9 SS=26.1; projected inv after 8d = 110+133-146.4 = 96.6 >= SS -> enough cover, wait (saves holding cost)
+2025-03-25 SKU_C | oh=   14 (+  0 in) | dem=  6 lost=  0 | WAIT     0 | fc=4.9/d sigma=2.6 SS=6.6; projected inv after 4d = 14+42-19.8 = 36.2 >= SS -> enough cover, wait (saves holding cost)
+2025-03-26 SKU_A | oh=   22 (+  0 in) | dem= 60 lost= 38 | WAIT     0 | fc=56.3/d sigma=20.7 SS=83.3; projected inv after 6d = 22+415-337.9 = 99.1 >= SS -> enough cover, wait (saves holding cost)
+2025-03-26 SKU_B | oh=   91 (+  0 in) | dem= 18 lost=  0 | WAIT     0 | fc=18.4/d sigma=4.7 SS=24.8; projected inv after 8d = 91+133-147.0 = 77.0 >= SS -> enough cover, wait (saves holding cost)
+2025-03-26 SKU_C | oh=   50 (+ 42 in) | dem=  3 lost=  0 | WAIT     0 | fc=5.1/d sigma=2.5 SS=6.4; projected inv after 4d = 50+0-20.2 = 29.8 >= SS -> enough cover, wait (saves holding cost)
+2025-03-27 SKU_A | oh=  415 (+415 in) | dem= 49 lost=  0 | ORDER  402 | fc=56.7/d sigma=19.6 SS=79.2; projected inv after 6d = 415+0-340.1 = 74.9 < SS -> ORDER 402 (target 816, position 415); arrives in 5d
+2025-03-27 SKU_B | oh=   73 (+  0 in) | dem= 59 lost=  0 | WAIT     0 | fc=18.3/d sigma=4.4 SS=23.5; projected inv after 8d = 73+133-146.7 = 59.3 >= SS -> enough cover, wait (saves holding cost)
+2025-03-27 SKU_C | oh=   47 (+  0 in) | dem=  2 lost=  0 | WAIT     0 | fc=4.8/d sigma=2.4 SS=6.3; projected inv after 4d = 47+0-19.4 = 27.6 >= SS -> enough cover, wait (saves holding cost)
+2025-03-28 SKU_A | oh=  366 (+  0 in) | dem= 69 lost=  0 | WAIT     0 | fc=55.9/d sigma=18.8 SS=75.7; projected inv after 6d = 366+402-335.5 = 432.5 >= SS -> enough cover, wait (saves holding cost)
+2025-03-28 SKU_B | oh=  147 (+133 in) | dem= 40 lost=  0 | ORDER  261 | fc=22.4/d sigma=13.5 SS=72.0; projected inv after 8d = 147+0-179.2 = -32.2 < SS -> ORDER 261 (target 408, position 147); arrives in 7d
+2025-03-28 SKU_C | oh=   45 (+  0 in) | dem= 10 lost=  0 | WAIT     0 | fc=4.6/d sigma=2.5 SS=6.4; projected inv after 4d = 45+0-18.3 = 26.7 >= SS -> enough cover, wait (saves holding cost)
+2025-03-29 SKU_A | oh=  297 (+  0 in) | dem=138 lost=  0 | WAIT     0 | fc=57.2/d sigma=18.3 SS=73.8; projected inv after 6d = 297+402-343.3 = 355.7 >= SS -> enough cover, wait (saves holding cost)
+2025-03-29 SKU_B | oh=  107 (+  0 in) | dem= 31 lost=  0 | WAIT     0 | fc=24.2/d sigma=14.0 SS=74.4; projected inv after 8d = 107+261-193.3 = 174.7 >= SS -> enough cover, wait (saves holding cost)
+2025-03-29 SKU_C | oh=   35 (+  0 in) | dem=  9 lost=  0 | WAIT     0 | fc=5.1/d sigma=2.9 SS=7.5; projected inv after 4d = 35+0-20.4 = 14.6 >= SS -> enough cover, wait (saves holding cost)
+2025-03-30 SKU_A | oh=  159 (+  0 in) | dem= 69 lost=  0 | WAIT     0 | fc=65.3/d sigma=30.9 SS=124.5; projected inv after 6d = 159+402-391.8 = 169.2 >= SS -> enough cover, wait (saves holding cost)
+2025-03-30 SKU_B | oh=   76 (+  0 in) | dem= 12 lost=  0 | WAIT     0 | fc=24.8/d sigma=13.4 SS=71.5; projected inv after 8d = 76+261-198.8 = 138.2 >= SS -> enough cover, wait (saves holding cost)
+2025-03-30 SKU_C | oh=   26 (+  0 in) | dem=  3 lost=  0 | ORDER   43 | fc=5.5/d sigma=3.0 SS=7.8; projected inv after 4d = 26+0-22.0 = 4.0 < SS -> ORDER 43 (target 68, position 26); arrives in 3d
+2025-03-31 SKU_A | oh=   90 (+  0 in) | dem= 50 lost=  0 | ORDER  480 | fc=65.7/d sigma=29.3 SS=118.2; projected inv after 6d = 90+402-394.0 = 98.0 < SS -> ORDER 480 (target 972, position 492); arrives in 5d
+2025-03-31 SKU_B | oh=   64 (+  0 in) | dem= 20 lost=  0 | WAIT     0 | fc=23.6/d sigma=13.4 SS=71.2; projected inv after 8d = 64+261-188.5 = 136.5 >= SS -> enough cover, wait (saves holding cost)
+2025-03-31 SKU_C | oh=   23 (+  0 in) | dem=  5 lost=  0 | WAIT     0 | fc=5.2/d sigma=3.0 SS=7.6; projected inv after 4d = 23+43-21.0 = 45.0 >= SS -> enough cover, wait (saves holding cost)
+2025-04-01 SKU_A | oh=  442 (+402 in) | dem= 59 lost=  0 | WAIT     0 | fc=64.1/d sigma=28.3 SS=113.9; projected inv after 6d = 442+480-384.6 = 537.4 >= SS -> enough cover, wait (saves holding cost)
+2025-04-01 SKU_B | oh=   44 (+  0 in) | dem= 16 lost=  0 | WAIT     0 | fc=23.2/d sigma=12.7 SS=67.8; projected inv after 8d = 44+261-185.6 = 119.4 >= SS -> enough cover, wait (saves holding cost)
+2025-04-01 SKU_C | oh=   18 (+  0 in) | dem=  5 lost=  0 | WAIT     0 | fc=5.2/d sigma=2.8 SS=7.3; projected inv after 4d = 18+43-20.9 = 40.1 >= SS -> enough cover, wait (saves holding cost)
+2025-04-02 SKU_A | oh=  383 (+  0 in) | dem= 62 lost=  0 | WAIT     0 | fc=63.6/d sigma=26.9 SS=108.2; projected inv after 6d = 383+480-381.6 = 481.4 >= SS -> enough cover, wait (saves holding cost)
+2025-04-02 SKU_B | oh=   28 (+  0 in) | dem= 11 lost=  0 | WAIT     0 | fc=22.5/d sigma=12.3 SS=65.5; projected inv after 8d = 28+261-179.9 = 109.1 >= SS -> enough cover, wait (saves holding cost)
+2025-04-02 SKU_C | oh=   56 (+ 43 in) | dem=  6 lost=  0 | WAIT     0 | fc=5.2/d sigma=2.7 SS=6.9; projected inv after 4d = 56+0-20.8 = 35.2 >= SS -> enough cover, wait (saves holding cost)
+2025-04-03 SKU_A | oh=  321 (+  0 in) | dem= 63 lost=  0 | WAIT     0 | fc=63.4/d sigma=25.5 SS=102.7; projected inv after 6d = 321+480-380.6 = 420.4 >= SS -> enough cover, wait (saves holding cost)
+2025-04-03 SKU_B | oh=   17 (+  0 in) | dem= 16 lost=  0 | WAIT     0 | fc=21.3/d sigma=12.2 SS=65.0; projected inv after 8d = 17+261-170.7 = 107.3 >= SS -> enough cover, wait (saves holding cost)
+2025-04-03 SKU_C | oh=   50 (+  0 in) | dem=  6 lost=  0 | WAIT     0 | fc=5.3/d sigma=2.6 SS=6.6; projected inv after 4d = 50+0-21.1 = 28.9 >= SS -> enough cover, wait (saves holding cost)
+2025-04-04 SKU_A | oh=  258 (+  0 in) | dem= 53 lost=  0 | WAIT     0 | fc=63.4/d sigma=24.2 SS=97.4; projected inv after 6d = 258+480-380.3 = 357.7 >= SS -> enough cover, wait (saves holding cost)
+2025-04-04 SKU_B | oh=  262 (+261 in) | dem= 21 lost=  0 | WAIT     0 | fc=20.8/d sigma=11.7 SS=62.4; projected inv after 8d = 262+0-166.4 = 95.6 >= SS -> enough cover, wait (saves holding cost)
+2025-04-04 SKU_C | oh=   44 (+  0 in) | dem=  7 lost=  0 | WAIT     0 | fc=5.4/d sigma=2.4 SS=6.3; projected inv after 4d = 44+0-21.4 = 22.6 >= SS -> enough cover, wait (saves holding cost)
+2025-04-05 SKU_A | oh=  685 (+480 in) | dem= 61 lost=  0 | WAIT     0 | fc=62.4/d sigma=23.2 SS=93.4; projected inv after 6d = 685+0-374.1 = 310.9 >= SS -> enough cover, wait (saves holding cost)
+2025-04-05 SKU_B | oh=  241 (+  0 in) | dem= 27 lost=  0 | WAIT     0 | fc=20.8/d sigma=11.1 SS=59.2; projected inv after 8d = 241+0-166.6 = 74.4 >= SS -> enough cover, wait (saves holding cost)
+2025-04-05 SKU_C | oh=   37 (+  0 in) | dem=  9 lost=  0 | WAIT     0 | fc=5.5/d sigma=2.4 SS=6.1; projected inv after 4d = 37+0-22.1 = 14.9 >= SS -> enough cover, wait (saves holding cost)
+2025-04-06 SKU_A | oh=  624 (+  0 in) | dem= 39 lost=  0 | WAIT     0 | fc=62.2/d sigma=22.0 SS=88.6; projected inv after 6d = 624+0-373.3 = 250.7 >= SS -> enough cover, wait (saves holding cost)
+2025-04-06 SKU_B | oh=  214 (+  0 in) | dem= 16 lost=  0 | ORDER  165 | fc=21.4/d sigma=10.7 SS=57.1; projected inv after 8d = 214+0-171.5 = 42.5 < SS -> ORDER 165 (target 379, position 214); arrives in 7d
+2025-04-06 SKU_C | oh=   28 (+  0 in) | dem=  3 lost=  0 | ORDER   43 | fc=5.9/d sigma=2.5 SS=6.4; projected inv after 4d = 28+0-23.5 = 4.5 < SS -> ORDER 43 (target 71, position 28); arrives in 3d
+2025-04-07 SKU_A | oh=  585 (+  0 in) | dem= 37 lost=  0 | WAIT     0 | fc=59.9/d sigma=22.1 SS=89.1; projected inv after 6d = 585+0-359.4 = 225.6 >= SS -> enough cover, wait (saves holding cost)
+2025-04-07 SKU_B | oh=  198 (+  0 in) | dem= 11 lost=  0 | WAIT     0 | fc=20.9/d sigma=10.3 SS=54.9; projected inv after 8d = 198+165-167.2 = 195.8 >= SS -> enough cover, wait (saves holding cost)
+2025-04-07 SKU_C | oh=   25 (+  0 in) | dem=  7 lost=  0 | WAIT     0 | fc=5.6/d sigma=2.5 SS=6.5; projected inv after 4d = 25+43-22.3 = 45.7 >= SS -> enough cover, wait (saves holding cost)
+2025-04-08 SKU_A | oh=  548 (+  0 in) | dem= 41 lost=  0 | WAIT     0 | fc=57.6/d sigma=22.2 SS=89.4; projected inv after 6d = 548+0-345.6 = 202.4 >= SS -> enough cover, wait (saves holding cost)
+2025-04-08 SKU_B | oh=  187 (+  0 in) | dem= 20 lost=  0 | WAIT     0 | fc=19.9/d sigma=10.3 SS=54.7; projected inv after 8d = 187+165-159.2 = 192.8 >= SS -> enough cover, wait (saves holding cost)
+2025-04-08 SKU_C | oh=   18 (+  0 in) | dem=  9 lost=  0 | WAIT     0 | fc=5.7/d sigma=2.5 SS=6.3; projected inv after 4d = 18+43-22.9 = 38.1 >= SS -> enough cover, wait (saves holding cost)
+2025-04-09 SKU_A | oh=  507 (+  0 in) | dem= 38 lost=  0 | WAIT     0 | fc=55.9/d sigma=21.7 SS=87.4; projected inv after 6d = 507+0-335.7 = 171.3 >= SS -> enough cover, wait (saves holding cost)
+2025-04-09 SKU_B | oh=  167 (+  0 in) | dem= 17 lost=  0 | WAIT     0 | fc=19.9/d sigma=9.8 SS=51.9; projected inv after 8d = 167+165-159.3 = 172.7 >= SS -> enough cover, wait (saves holding cost)
+2025-04-09 SKU_C | oh=   52 (+ 43 in) | dem=  6 lost=  0 | WAIT     0 | fc=6.0/d sigma=2.5 SS=6.5; projected inv after 4d = 52+0-24.2 = 27.8 >= SS -> enough cover, wait (saves holding cost)
+2025-04-10 SKU_A | oh=  469 (+  0 in) | dem= 64 lost=  0 | WAIT     0 | fc=54.2/d sigma=21.4 SS=86.0; projected inv after 6d = 469+0-324.9 = 144.1 >= SS -> enough cover, wait (saves holding cost)
+2025-04-10 SKU_B | oh=  150 (+  0 in) | dem= 25 lost=  0 | WAIT     0 | fc=19.6/d sigma=9.3 SS=49.5; projected inv after 8d = 150+165-157.0 = 158.0 >= SS -> enough cover, wait (saves holding cost)
+2025-04-10 SKU_C | oh=   46 (+  0 in) | dem=  7 lost=  0 | WAIT     0 | fc=6.0/d sigma=2.4 SS=6.2; projected inv after 4d = 46+0-24.2 = 21.8 >= SS -> enough cover, wait (saves holding cost)
+2025-04-11 SKU_A | oh=  405 (+  0 in) | dem= 69 lost=  0 | ORDER  395 | fc=55.1/d sigma=20.5 SS=82.6; projected inv after 6d = 405+0-330.8 = 74.2 < SS -> ORDER 395 (target 799, position 405); arrives in 5d
+2025-04-11 SKU_B | oh=  125 (+  0 in) | dem= 26 lost=  0 | WAIT     0 | fc=20.2/d sigma=9.0 SS=47.8; projected inv after 8d = 125+165-161.3 = 128.7 >= SS -> enough cover, wait (saves holding cost)
+2025-04-11 SKU_C | oh=   39 (+  0 in) | dem=  7 lost=  0 | WAIT     0 | fc=6.1/d sigma=2.3 SS=5.9; projected inv after 4d = 39+0-24.6 = 14.4 >= SS -> enough cover, wait (saves holding cost)
+2025-04-12 SKU_A | oh=  336 (+  0 in) | dem= 54 lost=  0 | WAIT     0 | fc=56.5/d sigma=19.9 SS=80.3; projected inv after 6d = 336+395-339.1 = 391.9 >= SS -> enough cover, wait (saves holding cost)
+2025-04-12 SKU_B | oh=   99 (+  0 in) | dem= 20 lost=  0 | WAIT     0 | fc=20.7/d sigma=8.7 SS=46.4; projected inv after 8d = 99+165-166.0 = 98.0 >= SS -> enough cover, wait (saves holding cost)
+2025-04-12 SKU_C | oh=   32 (+  0 in) | dem=  2 lost=  0 | WAIT     0 | fc=6.2/d sigma=2.2 SS=5.7; projected inv after 4d = 32+0-24.9 = 7.1 >= SS -> enough cover, wait (saves holding cost)
+2025-04-13 SKU_A | oh=  282 (+  0 in) | dem= 35 lost=  0 | WAIT     0 | fc=56.3/d sigma=18.9 SS=76.3; projected inv after 6d = 282+395-337.6 = 339.4 >= SS -> enough cover, wait (saves holding cost)
+2025-04-13 SKU_B | oh=  244 (+165 in) | dem= 16 lost=  0 | WAIT     0 | fc=20.7/d sigma=8.3 SS=44.0; projected inv after 8d = 244+0-165.4 = 78.6 >= SS -> enough cover, wait (saves holding cost)
+2025-04-13 SKU_C | oh=   30 (+  0 in) | dem=  7 lost=  0 | WAIT     0 | fc=5.8/d sigma=2.5 SS=6.4; projected inv after 4d = 30+0-23.2 = 6.8 >= SS -> enough cover, wait (saves holding cost)
+2025-04-14 SKU_A | oh=  247 (+  0 in) | dem= 56 lost=  0 | WAIT     0 | fc=54.1/d sigma=19.2 SS=77.2; projected inv after 6d = 247+395-324.9 = 317.1 >= SS -> enough cover, wait (saves holding cost)
+2025-04-14 SKU_B | oh=  228 (+  0 in) | dem= 30 lost=  0 | WAIT     0 | fc=20.2/d sigma=8.0 SS=42.5; projected inv after 8d = 228+0-161.6 = 66.4 >= SS -> enough cover, wait (saves holding cost)
+2025-04-14 SKU_C | oh=   23 (+  0 in) | dem= 13 lost=  0 | ORDER   49 | fc=5.9/d sigma=2.4 SS=6.1; projected inv after 4d = 23+0-23.7 = -0.7 < SS -> ORDER 49 (target 71, position 23); arrives in 3d
+2025-04-15 SKU_A | oh=  191 (+  0 in) | dem= 50 lost=  0 | WAIT     0 | fc=54.3/d sigma=18.2 SS=73.3; projected inv after 6d = 191+395-326.0 = 260.0 >= SS -> enough cover, wait (saves holding cost)
+2025-04-15 SKU_B | oh=  198 (+  0 in) | dem= 39 lost=  0 | ORDER  164 | fc=21.2/d sigma=8.2 SS=43.6; projected inv after 8d = 198+0-169.5 = 28.5 < SS -> ORDER 164 (target 361, position 198); arrives in 7d
+2025-04-15 SKU_C | oh=   10 (+  0 in) | dem=  5 lost=  0 | WAIT     0 | fc=6.6/d sigma=3.2 SS=8.2; projected inv after 4d = 10+49-26.5 = 32.5 >= SS -> enough cover, wait (saves holding cost)
+2025-04-16 SKU_A | oh=  536 (+395 in) | dem= 61 lost=  0 | WAIT     0 | fc=53.9/d sigma=17.3 SS=69.8; projected inv after 6d = 536+0-323.4 = 212.6 >= SS -> enough cover, wait (saves holding cost)
+2025-04-16 SKU_B | oh=  159 (+  0 in) | dem= 22 lost=  0 | WAIT     0 | fc=23.0/d sigma=9.6 SS=51.0; projected inv after 8d = 159+164-183.7 = 139.3 >= SS -> enough cover, wait (saves holding cost)
+2025-04-16 SKU_C | oh=    5 (+  0 in) | dem=  5 lost=  0 | WAIT     0 | fc=6.5/d sigma=3.1 SS=7.9; projected inv after 4d = 5+49-25.9 = 28.1 >= SS -> enough cover, wait (saves holding cost)
+2025-04-17 SKU_A | oh=  475 (+  0 in) | dem= 45 lost=  0 | WAIT     0 | fc=54.6/d sigma=16.6 SS=66.8; projected inv after 6d = 475+0-327.6 = 147.4 >= SS -> enough cover, wait (saves holding cost)
+2025-04-17 SKU_B | oh=  137 (+  0 in) | dem= 16 lost=  0 | WAIT     0 | fc=22.9/d sigma=9.1 SS=48.5; projected inv after 8d = 137+164-182.9 = 118.1 >= SS -> enough cover, wait (saves holding cost)
+2025-04-17 SKU_C | oh=   49 (+ 49 in) | dem=  7 lost=  0 | WAIT     0 | fc=6.3/d sigma=2.9 SS=7.6; projected inv after 4d = 49+0-25.3 = 23.7 >= SS -> enough cover, wait (saves holding cost)
+2025-04-18 SKU_A | oh=  430 (+  0 in) | dem= 60 lost=  0 | WAIT     0 | fc=53.6/d sigma=16.0 SS=64.6; projected inv after 6d = 430+0-321.9 = 108.1 >= SS -> enough cover, wait (saves holding cost)
+2025-04-18 SKU_B | oh=  121 (+  0 in) | dem= 22 lost=  0 | WAIT     0 | fc=22.2/d sigma=8.9 SS=47.4; projected inv after 8d = 121+164-177.5 = 107.5 >= SS -> enough cover, wait (saves holding cost)
+2025-04-18 SKU_C | oh=   42 (+  0 in) | dem= 12 lost=  0 | WAIT     0 | fc=6.4/d sigma=2.8 SS=7.2; projected inv after 4d = 42+0-25.6 = 16.4 >= SS -> enough cover, wait (saves holding cost)
+2025-04-19 SKU_A | oh=  370 (+  0 in) | dem= 69 lost=  0 | ORDER  398 | fc=54.3/d sigma=15.3 SS=61.8; projected inv after 6d = 370+0-325.7 = 44.3 < SS -> ORDER 398 (target 767, position 370); arrives in 5d
+2025-04-19 SKU_B | oh=   99 (+  0 in) | dem= 21 lost=  0 | WAIT     0 | fc=22.2/d sigma=8.5 SS=45.0; projected inv after 8d = 99+164-177.3 = 85.7 >= SS -> enough cover, wait (saves holding cost)
+2025-04-19 SKU_C | oh=   30 (+  0 in) | dem=  6 lost=  0 | ORDER   55 | fc=6.9/d sigma=3.2 SS=8.2; projected inv after 4d = 30+0-27.8 = 2.2 < SS -> ORDER 55 (target 85, position 30); arrives in 3d
+2025-04-20 SKU_A | oh=  301 (+  0 in) | dem= 40 lost=  0 | WAIT     0 | fc=55.8/d sigma=15.3 SS=61.5; projected inv after 6d = 301+398-334.5 = 364.5 >= SS -> enough cover, wait (saves holding cost)
+2025-04-20 SKU_B | oh=   78 (+  0 in) | dem= 14 lost=  0 | WAIT     0 | fc=22.0/d sigma=8.0 SS=42.7; projected inv after 8d = 78+164-176.4 = 65.6 >= SS -> enough cover, wait (saves holding cost)
+2025-04-20 SKU_C | oh=   24 (+  0 in) | dem=  5 lost=  0 | WAIT     0 | fc=6.9/d sigma=3.0 SS=7.8; projected inv after 4d = 24+55-27.4 = 51.6 >= SS -> enough cover, wait (saves holding cost)
+2025-04-21 SKU_A | oh=  261 (+  0 in) | dem= 92 lost=  0 | WAIT     0 | fc=54.2/d sigma=15.3 SS=61.7; projected inv after 6d = 261+398-325.1 = 333.9 >= SS -> enough cover, wait (saves holding cost)
+2025-04-21 SKU_B | oh=   64 (+  0 in) | dem= 18 lost=  0 | WAIT     0 | fc=21.2/d sigma=8.0 SS=42.7; projected inv after 8d = 64+164-169.9 = 58.1 >= SS -> enough cover, wait (saves holding cost)
+2025-04-21 SKU_C | oh=   19 (+  0 in) | dem=  7 lost=  0 | WAIT     0 | fc=6.7/d sigma=2.9 SS=7.6; projected inv after 4d = 19+55-26.7 = 47.3 >= SS -> enough cover, wait (saves holding cost)
+2025-04-22 SKU_A | oh=  169 (+  0 in) | dem=110 lost=  0 | WAIT     0 | fc=58.0/d sigma=18.8 SS=75.8; projected inv after 6d = 169+398-347.8 = 219.2 >= SS -> enough cover, wait (saves holding cost)
+2025-04-22 SKU_B | oh=  210 (+164 in) | dem= 22 lost=  0 | WAIT     0 | fc=20.9/d sigma=7.7 SS=40.9; projected inv after 8d = 210+0-167.3 = 42.7 >= SS -> enough cover, wait (saves holding cost)
+2025-04-22 SKU_C | oh=   67 (+ 55 in) | dem=  6 lost=  0 | WAIT     0 | fc=6.7/d sigma=2.8 SS=7.2; projected inv after 4d = 67+0-26.8 = 40.2 >= SS -> enough cover, wait (saves holding cost)
+2025-04-23 SKU_A | oh=   59 (+  0 in) | dem= 55 lost=  0 | ORDER  462 | fc=63.2/d sigma=24.3 SS=97.8; projected inv after 6d = 59+398-379.0 = 78.0 < SS -> ORDER 462 (target 919, position 457); arrives in 5d
+2025-04-23 SKU_B | oh=  188 (+  0 in) | dem= 15 lost=  0 | ORDER  167 | fc=21.0/d sigma=7.3 SS=38.8; projected inv after 8d = 188+0-168.2 = 19.8 < SS -> ORDER 167 (target 354, position 188); arrives in 7d
+2025-04-23 SKU_C | oh=   61 (+  0 in) | dem=  5 lost=  0 | WAIT     0 | fc=6.6/d sigma=2.7 SS=6.8; projected inv after 4d = 61+0-26.5 = 34.5 >= SS -> enough cover, wait (saves holding cost)
+2025-04-24 SKU_A | oh=  402 (+398 in) | dem= 62 lost=  0 | WAIT     0 | fc=62.3/d sigma=23.2 SS=93.4; projected inv after 6d = 402+462-374.1 = 489.9 >= SS -> enough cover, wait (saves holding cost)
+2025-04-24 SKU_B | oh=  173 (+  0 in) | dem= 31 lost=  0 | WAIT     0 | fc=20.4/d sigma=7.2 SS=38.2; projected inv after 8d = 173+167-163.4 = 176.6 >= SS -> enough cover, wait (saves holding cost)
+2025-04-24 SKU_C | oh=   56 (+  0 in) | dem=  7 lost=  0 | WAIT     0 | fc=6.5/d sigma=2.6 SS=6.6; projected inv after 4d = 56+0-25.9 = 30.1 >= SS -> enough cover, wait (saves holding cost)
+2025-04-25 SKU_A | oh=  340 (+  0 in) | dem= 63 lost=  0 | WAIT     0 | fc=62.3/d sigma=22.0 SS=88.6; projected inv after 6d = 340+462-373.9 = 428.1 >= SS -> enough cover, wait (saves holding cost)
+2025-04-25 SKU_B | oh=  142 (+  0 in) | dem= 13 lost=  0 | WAIT     0 | fc=21.5/d sigma=7.6 SS=40.4; projected inv after 8d = 142+167-171.9 = 137.1 >= SS -> enough cover, wait (saves holding cost)
+2025-04-25 SKU_C | oh=   49 (+  0 in) | dem=  4 lost=  0 | WAIT     0 | fc=6.5/d sigma=2.5 SS=6.3; projected inv after 4d = 49+0-26.1 = 22.9 >= SS -> enough cover, wait (saves holding cost)
+2025-04-26 SKU_A | oh=  277 (+  0 in) | dem= 69 lost=  0 | WAIT     0 | fc=62.4/d sigma=20.9 SS=84.1; projected inv after 6d = 277+462-374.3 = 364.7 >= SS -> enough cover, wait (saves holding cost)
+2025-04-26 SKU_B | oh=  129 (+  0 in) | dem= 12 lost=  0 | WAIT     0 | fc=20.6/d sigma=7.7 SS=40.9; projected inv after 8d = 129+167-165.1 = 130.9 >= SS -> enough cover, wait (saves holding cost)
+2025-04-26 SKU_C | oh=   45 (+  0 in) | dem=  8 lost=  0 | WAIT     0 | fc=6.3/d sigma=2.5 SS=6.3; projected inv after 4d = 45+0-25.1 = 19.9 >= SS -> enough cover, wait (saves holding cost)
+2025-04-27 SKU_A | oh=  208 (+  0 in) | dem= 49 lost=  0 | WAIT     0 | fc=63.0/d sigma=19.9 SS=80.2; projected inv after 6d = 208+462-378.3 = 291.7 >= SS -> enough cover, wait (saves holding cost)
+2025-04-27 SKU_B | oh=  117 (+  0 in) | dem= 14 lost=  0 | WAIT     0 | fc=19.8/d sigma=7.8 SS=41.4; projected inv after 8d = 117+167-158.2 = 125.8 >= SS -> enough cover, wait (saves holding cost)
+2025-04-27 SKU_C | oh=   37 (+  0 in) | dem=  5 lost=  0 | WAIT     0 | fc=6.4/d sigma=2.4 SS=6.1; projected inv after 4d = 37+0-25.8 = 11.2 >= SS -> enough cover, wait (saves holding cost)
+2025-04-28 SKU_A | oh=  621 (+462 in) | dem= 67 lost=  0 | WAIT     0 | fc=61.6/d sigma=19.4 SS=78.2; projected inv after 6d = 621+0-369.8 = 251.2 >= SS -> enough cover, wait (saves holding cost)
+2025-04-28 SKU_B | oh=  103 (+  0 in) | dem= 13 lost=  0 | WAIT     0 | fc=19.2/d sigma=7.6 SS=40.5; projected inv after 8d = 103+167-153.5 = 116.5 >= SS -> enough cover, wait (saves holding cost)
+2025-04-28 SKU_C | oh=   32 (+  0 in) | dem=  4 lost=  0 | WAIT     0 | fc=6.3/d sigma=2.3 SS=5.9; projected inv after 4d = 32+0-25.2 = 6.8 >= SS -> enough cover, wait (saves holding cost)
+2025-04-29 SKU_A | oh=  554 (+  0 in) | dem= 45 lost=  0 | WAIT     0 | fc=62.2/d sigma=18.5 SS=74.5; projected inv after 6d = 554+0-373.1 = 180.9 >= SS -> enough cover, wait (saves holding cost)
+2025-04-29 SKU_B | oh=   90 (+  0 in) | dem= 18 lost=  0 | WAIT     0 | fc=18.6/d sigma=7.5 SS=39.8; projected inv after 8d = 90+167-148.6 = 108.4 >= SS -> enough cover, wait (saves holding cost)
+2025-04-29 SKU_C | oh=   28 (+  0 in) | dem=  4 lost=  0 | ORDER   45 | fc=6.1/d sigma=2.3 SS=5.9; projected inv after 4d = 28+0-24.3 = 3.7 < SS -> ORDER 45 (target 73, position 28); arrives in 3d
+2025-04-30 SKU_A | oh=  509 (+  0 in) | dem= 45 lost=  0 | WAIT     0 | fc=60.5/d sigma=18.4 SS=74.0; projected inv after 6d = 509+0-362.7 = 146.3 >= SS -> enough cover, wait (saves holding cost)
+2025-04-30 SKU_B | oh=  239 (+167 in) | dem= 17 lost=  0 | WAIT     0 | fc=18.5/d sigma=7.1 SS=37.7; projected inv after 8d = 239+0-148.1 = 90.9 >= SS -> enough cover, wait (saves holding cost)
+2025-04-30 SKU_C | oh=   24 (+  0 in) | dem=  5 lost=  0 | WAIT     0 | fc=5.9/d sigma=2.3 SS=5.9; projected inv after 4d = 24+45-23.4 = 45.6 >= SS -> enough cover, wait (saves holding cost)
+                       demand  units_short  fill_rate  stockout_days  orders  holding_cost  stockout_cost  order_cost  total_cost  avg_inv_value  peak_inv_value
+Static (s,Q) baseline  8185.0        558.0      0.932           21.0    50.0       1690.05         6808.0      1000.0     9498.05       3932.387          7954.0
+Naive-forecast agent   8185.0         41.0      0.995            4.0    25.0       6248.93         1148.0       500.0     7896.93      14584.981         37019.0
+EWMA agent             8185.0         39.0      0.995            2.0    43.0       2852.49          346.0       860.0     4058.49       6630.774         15202.0
+
+--- Static (s,Q) baseline: per SKU ---
+       demand  units_short  fill_rate  stockout_days  orders  holding_cost  stockout_cost  order_cost  total_cost  avg_inv_value  peak_inv_value
+sku                                                                                                                                             
+SKU_A  5452.0        464.0      0.915           13.0    17.0        740.85         4176.0       340.0     5256.85       1677.396          3828.0
+SKU_B  2102.0         94.0      0.955            8.0    19.0        845.46         2632.0       380.0     3857.46       1994.009          5075.0
+SKU_C   631.0          0.0      1.000            0.0    14.0        103.74            0.0       280.0      383.74        260.981           464.0
+TOTAL  8185.0        558.0      0.932           21.0    50.0       1690.05         6808.0      1000.0     9498.05       3932.387          7954.0
+
+--- Naive-forecast agent: per SKU ---
+       demand  units_short  fill_rate  stockout_days  orders  holding_cost  stockout_cost  order_cost  total_cost  avg_inv_value  peak_inv_value
+sku                                                                                                                                             
+SKU_A  5452.0          0.0      1.000            0.0    12.0       2037.05            0.0       240.0     2277.05       4612.189         14340.0
+SKU_B  2102.0         41.0      0.980            4.0     6.0       3963.12         1148.0       120.0     5231.12       9346.981         28455.0
+SKU_C   631.0          0.0      1.000            0.0     7.0        248.76            0.0       140.0      388.76        625.811          1728.0
+TOTAL  8185.0         41.0      0.995            4.0    25.0       6248.93         1148.0       500.0     7896.93      14584.981         37019.0
+
+--- EWMA agent: per SKU ---
+       demand  units_short  fill_rate  stockout_days  orders  holding_cost  stockout_cost  order_cost  total_cost  avg_inv_value  peak_inv_value
+sku                                                                                                                                             
+SKU_A  5452.0         38.0      0.993            1.0    15.0       1195.10          342.0       300.0     1837.10       2705.887          7488.0
+SKU_B  2102.0          0.0      1.000            0.0    14.0       1555.96            0.0       280.0     1835.96       3669.717          8435.0
+SKU_C   631.0          1.0      0.998            1.0    14.0        101.43            4.0       280.0      385.43        255.170           496.0
+TOTAL  8185.0         39.0      0.995            2.0    43.0       2852.49          346.0       860.0     4058.49       6630.774         15202.0
+
+EWMA agent vs static baseline:  total cost 4,058 vs 9,498 (-57.3%),  fill rate 99.5% vs 93.2% (+6.3 pts),  units short 39 vs 558,  avg inventory value $6,631 vs $3,932
+                                     total_cost           fill_rate        units_short          avg_inv_value          
+                                           mean       std      mean    std        mean      std          mean       std
+policy                                                                                                                 
+EWMA agent                             5781.625   892.486     0.986  0.007     116.233   56.039      7286.219   262.669
+Naive-forecast agent                   7714.360  1254.157     0.995  0.006      44.100   52.322     15082.049  2026.034
+Static (s,Q) baseline                  8238.891  2024.860     0.947  0.023     440.500  193.291      4909.621   592.225
+Static (s,Q), hand-tuned to SL=0.999   5563.845   998.081     0.980  0.011     164.500   90.099      5844.963   766.295
+EWMA agent vs Static (s,Q) baseline                   : lower cost in  90% of 30 seeds, mean cost change -29.8%
+EWMA agent vs Static (s,Q), hand-tuned to SL=0.999    : lower cost in  27% of 30 seeds, mean cost change +3.9%
+EWMA agent - target service level sweep
+   service_level  fill_rate  units_short  holding_cost  stockout_cost  total_cost  avg_inv_value
+0          0.800      0.985        126.0       2428.60         1704.0     4972.60       5645.689
+1          0.900      0.989         92.0       2612.69         1260.0     4732.69       6073.632
+2          0.950      0.995         40.0       2796.39          398.0     4054.39       6499.415
+3          0.970      0.996         31.0       2896.02          279.0     4035.02       6732.057
+4          0.990      0.998         17.0       3102.75          153.0     4115.75       7214.075
+5          0.999      1.000          0.0       3440.57            0.0     4300.57       8000.991
+Static baseline - target service level sweep
+   service_level  fill_rate  units_short  holding_cost  stockout_cost  total_cost  avg_inv_value
+0          0.800      0.919        664.0       1539.54         9434.0    11953.54       3583.425
+1          0.900      0.924        626.0       1561.26         8370.0    10911.26       3631.726
+2          0.950      0.926        608.0       1617.69         8208.0    10805.69       3763.028
+3          0.970      0.957        352.0       1795.88         4954.0     7769.88       4174.085
+4          0.990      0.960        330.0       1859.70         4338.0     7217.70       4324.009
+5          0.999      0.968        261.0       1978.48         3717.0     6715.48       4603.132
+EWMA agent - alpha sweep (this dataset; one run, so noisy)
+   alpha  fill_rate  total_cost  avg_inv_value
+0   0.05      0.989     4424.95       6319.774
+1   0.10      0.995     4058.49       6630.774
+2   0.20      0.990     5440.96       7377.632
+3   0.30      0.990     5191.06       7543.217
+4   0.50      0.988     6641.55       9558.575
+5   0.80      0.991     7363.78      12090.462
